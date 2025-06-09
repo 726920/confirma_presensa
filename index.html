@@ -28,8 +28,8 @@
       <label for="nome">Nome:</label>
       <input type="text" id="nome" name="nome" required />
 
-      <label for="telefone">Telefone (WhatsApp):</label>
-      <input type="tel" id="telefone" name="telefone" required />
+      <label for="sobrenome">Último Sobrenome:</label>
+      <input type="text" id="sobrenome" name="sobrenome" required />
 
       <button type="submit" class="btn">Confirmar Leitura</button>
     </form>
@@ -37,20 +37,20 @@
 
   <script>
     document.getElementById("confirmForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // impede envio padrão do formulário
+      event.preventDefault();
 
       const nome = document.getElementById("nome").value.trim();
-      const telefone = document.getElementById("telefone").value.trim();
+      const sobrenome = document.getElementById("sobrenome").value.trim();
 
-      if (!nome || !telefone) {
+      if (!nome || !sobrenome) {
         alert("Por favor, preencha todos os campos.");
         return;
       }
 
       const dados = {
         nome: nome,
-        telefone: telefone,
-        mensagem: "confirmou leitura da preparação.",
+        sobrenome: sobrenome,
+        mensagem: "Paciente confirmou leitura da preparação.",
         timestamp: new Date().toISOString()
       };
 
